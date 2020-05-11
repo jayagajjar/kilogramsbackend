@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose
-    .connect('mongodb://127.0.0.1:27017/kilogramsDB', { useNewUrlParser: true ,useUnifiedTopology: true },)
+    .connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/kilogramsDB', { useNewUrlParser: true ,useUnifiedTopology: true },)
     .catch(e => {
         console.error('Connection error', e.message)
     })
