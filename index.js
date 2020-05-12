@@ -7,7 +7,7 @@ const itemRouter = require('./routes/item-router')
 const shoppinglistRouter = require('./routes/shoppinglist-router')
 
 const app = express()   
-const apiPort = 3000
+const apiPort = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
